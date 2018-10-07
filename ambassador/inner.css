@@ -1,0 +1,52 @@
+.inner-main {
+    margin: 0;
+    margin-right: auto;
+
+    display: flex;
+}
+
+.index-menu--inner {
+    margin: 0;
+}
+
+.index-menu__list--inner {
+    flex-direction: column;
+}
+
+.main-description {
+    padding-right: 30px;
+}
+
+/* about */
+
+.main-description {
+    text-indent: 35px;
+}
+
+.main-description__intro {
+    text-align: right;
+}
+
+.main-description__intro span {
+    font-size: 11px;
+}
+
+.main-description__lead-text {
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.main-description__last-text {
+    text-align: right;
+    font-size: 13px;
+}
+
+.staff {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.staff p {
+    padding: 80px;
+}

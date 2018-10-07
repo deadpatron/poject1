@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Амбассадор - Ваш помошник</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
      <header class="header">
          <ul class="header__top top-list">
              <li class="top-list__item"><button class="feedback-batton">заказть звонок</button></li>
-             <li class="top-list__item">Москва, м. Алексеевская, Звёздный бульвар 21с.1, офис 512</li>
+             <li class="top-list__item"><p class="adress">Москва, м. Алексеевская, Звёздный бульвар 21с.1, офис 512</p></li>
              <li class="top-list__item"><input type="text" class="search"></li>
          </ul>
          <ul class="header__bottom bottom-list">
-             <li class="bottom-list__item"><a href="index.html"><img src="img/logo.png" alt="логотип"></a></li>
+             <li class="bottom-list__item"><a href="index.html"><img src="img/altlogo.png" alt="логотип" class="main-logo"></a></li>
              <li class="bottom-list__item">
                  <ul class="bottom-list__contacts">
-                     <li class="bottom-list__contacts bottom-list__contacts--telephone">+7 800 800 80 80</li>
-                     <li class="bottom-list__contacts bottom-list__contacts--telephone">+7 800 800 80 80</li>
-                     <li class="bottom-list__contacts bottom-list__contacts--email">examle@mail.ru</li>
+                     <li class="bottom-list__contact bottom-list__contacts--telephone">+7 800 800 80 80</li>
+                     <li class="bottom-list__contact bottom-list__contacts--telephone">+7 800 800 80 80</li>
+                     <li class="bottom-list__contact bottom-list__contacts--email">examle@mail.ru</li>
                  </ul>
              </li>
          </ul>
@@ -27,18 +30,43 @@
                  <li class="nav-menu__item nav-menu__item--active"><a class="nav-menu__link" href="index.html">Главная</a></li>
                  <li class="nav-menu__item"><a class="nav-menu__link" href="about.html">О нас</a></li>
                  <li class="nav-menu__item"><a class="nav-menu__link" href="catalog.html">Каталог услуг</a></li>
-                 <li class="nav-menu__item"><a class="nav-menu__link" href="partners.html">Сотрудничество</a></li>
                  <li class="nav-menu__item"><a class="nav-menu__link" href="contacts.html">Контакты</a></li>
              </ul>
          </nav>
      </header>
      <main class="index-main">
+         <div class="index-main__feedback-call visually-hidden">
+             <button class="close-callback">Закрыть</button>
+             <form class="index-form__container index-form__container--call" action="send.php" method="post">
+                 <div class="input-wrapper">
+                    <div class="index-form__wrapper">
+                        <label for="user-name" class="index-form__label">Имя:</label>
+                        <input type="text" id="user-name" class="index-form__input" name="user-name" required>
+                    </div>
+                    <div class="index-form__wrapper">
+                        <label for="user-tel" class="index-form__label">Телефон:</label>
+                        <input type="tel" id="user-email" class="index-form__input" name="user-tel" required>
+                    </div> 
+                 </div>
+                <div class="index-form__wrapper">
+                    <label for="comment" class="index-form__label">Сообщение:</label>
+                    <textarea id="comment" class="index-form__textarea" name="user-message" required></textarea>
+                </div>
+                 <button type="submit" class="index-form__submit index-form__submit--call">Заказть звонок</button>
+            </form>
+         </div>
+         <div class="index-main__start">
+             <img src="img/train.png" alt="Всегда быть вовремя" class="index-main__img" width="100%">
+             <p class="index-main__lead-text">
+                 Мы умеем быть нужными<br>вовремя!
+             </p>
+         </div>
          <h1 class="visually-hidden">Главная</h1>
          <section class="index-menu">
              <ul class="index-menu__list">
                  <li class="index-menu__item">
                      <img src="img/iceTrain.jpg" alt="локомотив" class="index-menu__logo" height="130">
-                     <h3 class="index-menu__name">Комплекс услуг "локомотив"</h3>
+                     <h3 class="index-menu__name"><a href="service.html" class="index-menu__link">Комплекс услуг "Локомотив"</a></h3>
                      <ol class="index-menu__order-list">
                          <li class="index-menu__order-item">Воплощение идеи в жизнь</li>
                          <li class="index-menu__order-item">Привлечение инвестиций</li>
@@ -46,7 +74,7 @@
                  </li>
                  <li class="index-menu__item">
                      <img src="img/yogaman.jpg" alt="Бренд-Амбассадор" class="index-menu__logo" height="130">
-                     <h3 class="index-menu__name">Комплекс услуг "Бренд-Амбассадор"</h3>
+                     <h3 class="index-menu__name"><a href="service.html" class="index-menu__link">Комплекс услуг "Бренд-Амбассадор"</a></h3>
                      <ol class="index-menu__order-list">
                          <li class="index-menu__order-item">Расширение клиентской базы.</li>
                          <li class="index-menu__order-item">Создание новой клиентской базы</li>
@@ -55,7 +83,7 @@
                  </li>
                  <li class="index-menu__item">
                      <img src="img/trap.jpg" alt="Оценка рисков" class="index-menu__logo" height="130">
-                     <h3 class="index-menu__name">Комплекс услуг "Оценка рисков"</h3>
+                     <h3 class="index-menu__name"><a href="service.html" class="index-menu__link">Комплекс услуг "Оценка рисков"</a></h3>
                      <ol class="index-menu__order-list">
                          <li class="index-menu__order-item">Внутренний контроль.</li>
                          <li class="index-menu__order-item">Оценка внешних финансовых рисков.</li>
@@ -64,12 +92,12 @@
                  </li>
                  <li class="index-menu__item">
                         <img src="img/lockMan.jpg" alt="Уникальный" class="index-menu__logo" height="130">
-                        <h3 class="index-menu__name">Комплекс услуг "Уникальный"</h3>
+                        <h3 class="index-menu__name"><a href="service.html" class="index-menu__link">Комплекс услуг "Уникальный"</a></h3>
                         <p class="index-menu__order-item">Это уникальный проект. Пользователями данной услуги могут стать юридические лица, соответствующие определённым критериям.</p>
                     </li>
                 <li class="index-menu__item">
                         <img src="img/safityMan.jpg" alt="Скорая помощь" class="index-menu__logo" height="130">
-                        <h3 class="index-menu__name">Комплекс услуг "Скорая помощь"</h3>
+                        <h3 class="index-menu__name"><a href="service.html" class="index-menu__link">Комплекс услуг "Скорая помощь"</a></h3>
                         <ol class="index-menu__order-list">
                             <li class="index-menu__order-item">Постановка и восстановление бухгалтерского и налогового учёта.</li>
                             <li class="index-menu__order-item">Составление бухгалтерской и налоговой отчётности</li>
@@ -77,56 +105,71 @@
                     </li>
                  <li class="index-menu__item">
                      <img src="img/kayMan.jpg" alt="готовые решения" class="index-menu__logo" height="130">
-                     <h3 class="index-menu__name">Банк готовых решений</h3>
-                     <p class="index-menu__order-item">готовые формы документов для Вашего бизнеса<p>
+                     <h3 class="index-menu__name"><a href="service.html" class="index-menu__link">Банк готовых решений</a></h3>
+                     <p class="index-menu__order-item">Готовые формы документов для Вашего бизнеса<p>
                     </li>
              </ul>
+             <svg width="0" height="0">
+                <defs>
+                  <filter id="posterize">
+                    <feComponentTransfer>
+                      <feFuncR type="discrete" 
+                  tableValues="0 0.2 0.4 0.6 0.8 1"/>
+                      <feFuncG type="discrete" 
+                  tableValues="0 0.2 0.4 0.6 0.8 1"/>
+                      <feFuncB type="discrete" 
+                  tableValues="0 0.2 0.4 0.6 0.8 1"/>
+                    </feComponentTransfer>
+                 </filter>
+               </defs>      
+                </svg>          
          </section>
          <article class="index-main__form index-form">
-             <h2 class="visually-hidden">
+             <h2 class="index-form__name">
                  Форма обратной связи
              </h2>
-             <fieldset class="index-form__container">
-                 <label for="user-name" class="index-form__label">Имя:</label>
-                 <input type="text" id="user-name" class="index-form__input">
-                 <label for="user-email" class="index-form__label">Email:</label>
-                 <input type="email" id="user-email" class="index-form__input">
-                 <label for="comment" class="index-form__label">Сообщение:</label>
-                 <textarea id="comment" class="index-form__textarea"></textarea>
-                 <input type="submit">
-             </fieldset>
+             <form class="index-form__container" id="feedback-form">
+                 <div class="input-wrapper">
+                    <div class="index-form__wrapper">
+                        <label for="user-name" class="index-form__label">Имя:</label>
+                        <input type="text" id="user-name" class="index-form__input" name="user-name" required>
+                    </div>
+                    <div class="index-form__wrapper">
+                        <label for="user-email" class="index-form__label">Email:</label>
+                        <input type="email" id="user-email" class="index-form__input" name="user-email" required>
+                    </div> 
+                 </div>
+                <div class="index-form__wrapper">
+                    <label for="comment" class="index-form__label">Сообщение:</label>
+                    <textarea id="comment" class="index-form__textarea" name="user-message" required></textarea>
+                </div>
+                 <button type="submit" class="index-form__submit">Отправить</button>
+            </form>
          </article>
      </main>
      <footer class="footer">
-        <ul class="footer__top top-list">
-            <li class="top-list__item"><a href="index.html"><img src="img/logo.png" alt="логотип"></a></li>
-            <li class="top-list__item">
-                <ul class="top-list__contacts">
-                    <li class="top-list__contacts top-list__contacts--telephone">+7 800 800 80 80</li>
-                    <li class="top-list__contacts top-list__contacts--telephone">+7 800 800 80 80</li>
-                    <li class="top-list__contacts top-list__contacts--email">examle@mail.ru</li>
+            <ul class="header__bottom bottom-list header__bottom--footer">
+                    <li class="bottom-list__item"><a href="index.html"><img src="img/altlogo-invert.png" alt="логотип" class="main-logo"></a></li>
+                    <li class="bottom-list__item">
+                        <ul class="bottom-list__contacts">
+                            <li class="bottom-list__contact bottom-list__contacts--telephone">+7 800 800 80 80</li>
+                            <li class="bottom-list__contact bottom-list__contacts--telephone">+7 800 800 80 80</li>
+                            <li class="bottom-list__contact bottom-list__contacts--email">examle@mail.ru</li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
         <nav class="footer__menu nav-menu">
             <ul class="nav-menu__list">
                 <li class="nav-menu__item nav-menu__item--active"><a class="nav-menu__link" href="index.html">Главная</a></li>
-                <li class="nav-menu__item"><a class="nav-menu__link" href="about.html">О нас</a></li>                        
+                <li class="nav-menu__item"><a class="nav-menu__link" href="about.html">О нас</a></li>
                 <li class="nav-menu__item"><a class="nav-menu__link" href="catalog.html">Каталог услуг</a></li>
-                <li class="nav-menu__item"><a class="nav-menu__link" href="partners.html">Сотрудничество</a></li>
                 <li class="nav-menu__item"><a class="nav-menu__link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
         <div class="footer__bottom">
-            <ul class="footer__copiright">
-                <li class="footer__info">
-                    <div>счётчик</div>
-                </li>
-                <li class="footer__info">
-                    <div>разработчик</div>
-                </li>
-            </ul>
+            <div>счётчик</div>
         </div>
      </footer>
+     <script src="index.js"></script>
 </body>
 </html>
